@@ -1,12 +1,12 @@
 html{
     font-size: 10px;
+    margin: 0;
+    padding: 0;
 }
 body{
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
     font-size: 1.6rem;
     font-family: 'Lato', 'Open-sans', sans-serif;
 }
@@ -21,19 +21,21 @@ li{
 }
 .header{
     text-transform: uppercase;
-    height: 92px;
+    height: 89px;
     background-color: #2d303a;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
     font-stretch: ultra-condensed;
+    border-bottom:6px #323746 solid;
 }
 .logo{
-    font-size: 24px;
+    font-size: 25px;
     color:#fff;
     margin-right: auto;
     margin-left: 40px;
+    letter-spacing: -0.5px;
 }
 .logo>span{
     color:#f06c64
@@ -42,6 +44,7 @@ li{
     display: flex;
     justify-content: center;
     align-items: baseline;
+    margin-top: 6px;
 }
 .headeer__navigation{
     display: flex;
@@ -51,9 +54,13 @@ li{
 .headeer__navigation>li{
     margin-right: 28px;
 }
+.headeer__navigation .active {color:#f06c64}
 .headeer__navigation>li>a{
     font-size: 12px;
     color:#fff;
+    letter-spacing: 0.03px;
+}
+.headeer__navigation>li>a:last-child{
+    letter-spacing: 0.03px;
 }
 .headeer__navigation>li:last-child{margin-right: 0;}
-.active a{color:#f06c64 !important}
