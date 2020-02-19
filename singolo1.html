@@ -21,6 +21,14 @@
                     </ul>
                 </nav>
         </div>
-    </header>     
+    </header> 
+    <script>
+        let li = document.querySelectorAll('.headeer__navigation>li>a');
+        li.forEach(el=>el.addEventListener("click", addActive))
+        function addActive(){
+            li.forEach(el=>el.className='')
+            this.classList.add('active')
+        }
+    </script>    
 </body>
 </html>

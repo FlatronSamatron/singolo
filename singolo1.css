@@ -60,6 +60,10 @@ li{
     color:#fff;
     letter-spacing: 0.03px;
 }
+.headeer__navigation>li>a:hover{
+    color:#f06c64;
+    transition: 0.3s;
+}
 .headeer__navigation>li>a:last-child{
     letter-spacing: 0.03px;
 }
