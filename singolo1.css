@@ -132,6 +132,8 @@ h2,h3,p{
 
 .services{
     background-color: #f1f1f1;
+    height: 494px;
+    border-bottom: 6px white solid;
 }
 .service__content{
     margin-right: 38px;
