@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local("Lato Light"), local("Lato-Light"), url(assets/fonts/lato/Lato-Light.ttf) format("ttf");
+  }
+  
+  @font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Lato Regular"), local("Lato-Regular"), url(assets/fonts/lato/Lato-Regular.ttf) format("ttf");
+  }
+  
+  @font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local("Lato Bold"), local("Lato-Bold"), url(assets/fonts/lato/Lato-Bold.ttf) format("ttf");
+  }
+  
+  @font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: local("Lato Black"), local("Lato-Black"), url(assets/fonts/lato/Lato-Black.ttf) format("ttf");
+  }
+
+body,html{
+    margin: 0;
+    padding: 0;
+    font-family: "Lato";
+}
+.wrapper{
+    width: 1020px;
+    margin: 0 auto;
+}
+.portfolio{
+    height: 864px;
+    background-color: #2d303a;
+}
+.portfolio h2{
+    font-size: 30px;
+    color: #666d89;
+    font-weight: 900;
+    margin: 0;
+}
+.portfolio p{
+    font-size: 18px;
+    color: #767e9e;
+    font-weight: 300;
+}
