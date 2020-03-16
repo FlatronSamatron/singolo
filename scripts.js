@@ -103,7 +103,7 @@ function addImgBorder(){
 
 function sub(e){
     e.preventDefault();
-    popup.style.top = 20+'px';
+    popup.style.top = 50+'px';
     back.style.display = 'block';
     subject.value ?  firstP.innerHTML = `Тема: ${subject.value}` : firstP.innerHTML = 'Без темы'
     comment.value ?  secondP.innerHTML = `Описание: ${comment.value}` : secondP.innerHTML = 'Без описания'
