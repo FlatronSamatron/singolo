@@ -1,4 +1,6 @@
 const navLi = document.querySelectorAll('.headeer__navigation>li>a');
+const header = document.querySelector('header');
+const headWrap = document.querySelector('.header>.wrapper');
 
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
@@ -38,7 +40,6 @@ const comment = document.querySelector('textarea[name=comment]')
 const firstP = document.querySelector('.first-p')
 const secondP = document.querySelector('.second-p')
 
-
 slides[0].style.display = 'block';
 let slideCount = 0
 
@@ -57,6 +58,7 @@ formSub.addEventListener('submit', sub)
 back.addEventListener('click', hideEl)
 ok.addEventListener('click', hideEl)
 
+
 function displayBlackLeft(){
     window.getComputedStyle(verticalBlack,null).getPropertyValue("display") === 'none' ? verticalBlack.style.display = 'block' : verticalBlack.style.display = 'none'
 }
@@ -73,9 +75,44 @@ function moveSlide(){
     slider.style.background = window.getComputedStyle(slides[slideCount],null).getPropertyValue("background")
 }
 
-function addActive(){
-    navLi.forEach(el=>el.className='')
-    this.classList.add('active')
+window.addEventListener('scroll', function() {
+    let top = pageYOffset;
+    if(top == 0){
+        header.style.height = 89.5+'px'
+        headWrap.style.alignItems = 'baseline'
+    }else{
+        header.style.height = 40+'px';
+        headWrap.style.alignItems = 'center'
+    }
+
+    if(top <= 600){
+        navLi.forEach(el=>el.className='')
+        navLi[0].classList.add('active')
+    } else if(top <= 1100){
+        navLi.forEach(el=>el.className='')
+        navLi[1].classList.add('active')
+    } else if(top <= 2000){
+        navLi.forEach(el=>el.className='')
+        navLi[2].classList.add('active')
+    } else if(top <= 2790){
+        navLi.forEach(el=>el.className='')
+        navLi[3].classList.add('active')
+    } else {
+        navLi.forEach(el=>el.className='')
+        navLi[4].classList.add('active')
+    }
+  });
+
+function addActive(e){
+    e.preventDefault()
+    // navLi.forEach(el=>el.className='')
+    // this.classList.add('active')
+    const blockID = this.getAttribute('href').substr(1);
+    console.log(blockID)
+    document.getElementById(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    })
 }  
 
 
@@ -103,7 +140,7 @@ function addImgBorder(){
 
 function sub(e){
     e.preventDefault();
-    popup.style.top = 50+'px';
+    popup.style.top = 80+'px';
     back.style.display = 'block';
     subject.value ?  firstP.innerHTML = `Тема: ${subject.value}` : firstP.innerHTML = 'Без темы'
     comment.value ?  secondP.innerHTML = `Описание: ${comment.value}` : secondP.innerHTML = 'Без описания'
