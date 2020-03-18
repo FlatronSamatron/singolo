@@ -35,6 +35,8 @@ const formSub = document.querySelector('.contacts_info_block form');
 const popup = document.querySelector('.popup')
 const back = document.querySelector('.back')
 const ok = document.querySelector('.ok')
+const name = document.querySelector('input[name=input-name]')
+const mail = document.querySelector('input[name=email-adress]')
 const subject = document.querySelector('input[name=input-subject]')
 const comment = document.querySelector('textarea[name=comment]')
 const firstP = document.querySelector('.first-p')
@@ -46,6 +48,9 @@ let slideCount = 0
 navLi.forEach(el=>el.addEventListener("click", addActive));
 
 [left,right].forEach(el => el.addEventListener("click",moveSlide))
+left.addEventListener("click",leftSlide)
+right.addEventListener("click",rightSlide)
+
 
 verticalImg.addEventListener("click",displayBlackLeft)
 horizontalImg.addEventListener("click",displayBlackRight)
@@ -74,7 +79,12 @@ function moveSlide(){
     slides[slideCount].style.display = 'block';
     slider.style.background = window.getComputedStyle(slides[slideCount],null).getPropertyValue("background")
 }
-
+function leftSlide(){
+    slides.forEach(el=>el.style.animationName = 'left')
+}
+function rightSlide(){
+    slides.forEach(el=>el.style.animationName = 'right')
+}
 window.addEventListener('scroll', function() {
     let top = pageYOffset;
     if(top == 0){
@@ -149,4 +159,8 @@ function sub(e){
 function hideEl(){
     popup.style.top = -1000+'vh';
     back.style.display = 'none';
+    subject.value = ''
+    comment.value = ''
+    name.value = ''
+    mail.value = ''
 }
