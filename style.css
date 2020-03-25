@@ -42,7 +42,7 @@ ul{
     font-stretch: ultra-condensed;
     border-bottom:5px #323746 solid;
     position: fixed;
-    z-index: 2;
+    z-index: 4;
     width: 100%;
     transition: 0.5s;
 }
@@ -616,7 +616,6 @@ textarea::placeholder { color: #f48c8f; }
     border: #d6564f solid 1px
 }
 .contacts_info_block form input[type=submit]:hover{
-    width: 619px;
     background-color: #d6564f;
     color:#f0d8d9;
     transition: .5s;
@@ -773,4 +772,123 @@ footer, .contacts{
     color:#f0d8d9;
     transition: .5s;
     border: #f0d8d9 solid 1px  
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+    .wrapper{
+        width: 768px;
+        margin: 0 auto;
+    }
+    .slider, .wrapper.slides.slide-1, div.slides.slide-2{
+        height: 447px;
+    }
+    .slide2{
+        height: 300px;
+    }
+    .vertical-black{
+        width: 138px;
+        height: 238px;
+        left: 93px;
+        top: 103px;
+    }
+    .horizontal-black{
+        width: 237px;
+        height: 134px;
+        left: 377px;
+        top: 160px;
+    }
+    .vertical{
+        height: 344px;
+        width: 175px;
+        left: 83px;
+        top: 57px;
+    }
+    .horizontal{
+        height: 170px;
+        width: 344px;
+        right: 90px;
+        top:150px;
+    }
+    .left{
+        left:30px;
+        top:212px;
+    }
+    .right{
+        right:30px;
+        top:212px;
+    }
+    /* .slider{
+        display: none;
+    } */
+    .services{
+        height: 625px;
+    }
+    .service__info{
+        display: flex;
+        justify-content: space-around;
+    }
+    .service__info__block{
+        flex-direction: column;
+    }
+    .info__block{
+        margin-bottom: 39px;
+    }
+    .service__info{
+        margin-top: 28px;
+    }
+    .info__block{
+        justify-content: flex-start;
+    }
+    .service__content{
+        padding-top: 44px;
+    }
+
+    .portfolio{
+        height: 1100px;
+    }
+    .portfolio__img{
+        padding-top: 34px;
+    }
+    .portfolio__img{
+        grid-template-columns: 216px 216px 216px;
+        grid-template-rows: 184px 184px 184px 184px;
+    }
+    
+
+    .about-us{
+        height: 710px;
+    }
+    .us img{
+        height: 219px;
+        width: 219px;
+    }
+    .about-us__us{
+        grid-template-columns: 219px 219px 219px;
+        grid-template-rows: 450px;
+        grid-gap: 16px
+    }
+
+    .contacts{
+        /* height: 680px; */
+    }
+    .contacts_info_block form input, textarea{
+        width: 462px;
+    }
+    textarea{
+        height: 170px;
+    }
+    .contacts_info_block form input[type=submit]{
+        width: 480px;
+    }
+    .contact_info p{
+        width: 185px;
+        text-align: justify;
+    }
+    .contacts_info_block{
+        justify-content: space-between;
+    }
+    .contacts__content p{
+        margin: 0px 0 20px 0;
+    }
 }

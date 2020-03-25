@@ -42,6 +42,8 @@ const comment = document.querySelector('textarea[name=comment]')
 const firstP = document.querySelector('.first-p')
 const secondP = document.querySelector('.second-p')
 
+if(document.body.clientWidth<1020){slides[0].style.height=447+'px'}
+
 slides[0].style.display = 'block';
 let slideCount = 0
 
@@ -63,6 +65,12 @@ formSub.addEventListener('submit', sub)
 back.addEventListener('click', hideEl)
 ok.addEventListener('click', hideEl)
 
+window.addEventListener(`resize`, event => {
+    let h = window.getComputedStyle(slider,null).getPropertyValue("height");
+    slides.forEach(el=>el.style.height = h)
+    console.log('res')
+  }, false);
+
 
 function displayBlackLeft(){
     window.getComputedStyle(verticalBlack,null).getPropertyValue("display") === 'none' ? verticalBlack.style.display = 'block' : verticalBlack.style.display = 'none'
@@ -81,12 +89,14 @@ function moveSlide(){
 }
 function leftSlide(){
     slides.forEach(el=>el.style.animationName = 'left')
+    console.log(window.getComputedStyle(slides[0],null).getPropertyValue("height"))
 }
 function rightSlide(){
     slides.forEach(el=>el.style.animationName = 'right')
 }
 window.addEventListener('scroll', function() {
     let top = pageYOffset;
+    // console.log(top)
     if(top == 0){
         header.style.height = 89.5+'px'
         headWrap.style.alignItems = 'baseline'
@@ -94,7 +104,8 @@ window.addEventListener('scroll', function() {
         header.style.height = 40+'px';
         headWrap.style.alignItems = 'center'
     }
-
+    
+    
     if(top <= 600){
         navLi.forEach(el=>el.className='')
         navLi[0].classList.add('active')
@@ -104,7 +115,7 @@ window.addEventListener('scroll', function() {
     } else if(top <= 2000){
         navLi.forEach(el=>el.className='')
         navLi[2].classList.add('active')
-    } else if(top <= 2790){
+    } else if(top <= 2600){
         navLi.forEach(el=>el.className='')
         navLi[3].classList.add('active')
     } else {
