@@ -774,8 +774,8 @@ footer, .contacts{
     border: #f0d8d9 solid 1px  
 }
 
-
-@media screen and (min-width: 768px) and (max-width: 1020px) {
+/* @media screen and (min-width: 768px) and (max-width: 1020px) */
+@media screen and (max-width: 1020px) {
     .wrapper{
         width: 768px;
         margin: 0 auto;
@@ -868,10 +868,6 @@ footer, .contacts{
         grid-template-rows: 450px;
         grid-gap: 16px
     }
-
-    .contacts{
-        /* height: 680px; */
-    }
     .contacts_info_block form input, textarea{
         width: 462px;
     }
@@ -890,5 +886,109 @@ footer, .contacts{
     }
     .contacts__content p{
         margin: 0px 0 20px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper{
+        width: 376px;
+        margin: 0 auto;
+    }
+    nav{
+        display: none;
+    }
+    .logo{
+        margin: 0;
+    }
+    .slider{
+        height: 218.38px;
+        /* display: none; */
+    }
+    .services{
+        height: 1025px;
+    }
+    .service__info{
+        flex-direction: column;
+    }
+    .info__block{
+        margin: 0 0 20px 0 ;
+    }
+    .one{
+        margin-bottom: 0;
+    }
+
+    .portfolio{
+        height: 850px;
+    }
+    .portfolio__img{
+        padding-top: 34px;
+    }
+    .portfolio__img img{
+        width: 151px;
+        height: 128px;
+    }
+    .portfolio__img{
+        grid-template-columns: 151px 151px;
+        grid-template-rows: 128px 128px 128px 128px;
+        grid-gap:12px
+    }
+    .portfolio__img img:nth-child(n + 9){
+        display: none;
+    }
+    .img-border{
+        border:#F06C64 solid 3px;
+        height: 123px !important;
+        width: 146px !important;
+    }
+    .portfolio__buttons li{
+        font-size: 11px;
+    }
+    .portfolio p,.service__content p{
+        text-align: justify;
+    }
+
+    .about-us{
+        height: 1770px;
+    }
+    .us img{
+        height: 314px;
+        width: 314px;
+    }
+    .about-us__us{
+        grid-template-columns: 314px;
+        grid-template-rows: 450px 450px 450px;
+        grid-gap: 16px;
+        padding-top: 10px;
+    }
+    .social{
+        padding: 0;
+    }
+    .about-us h2 {
+        padding: 30px 0 18px 0;
+    }
+
+    .contacts_info_block {
+        flex-direction: column;
+    }
+
+    .contacts_info_block form input, textarea {
+        width: 95%;
+    }
+    .contacts_info_block form input[type=submit] {
+        width: 100%;
+    }
+    .contacts{
+        height: 980px;
+    }
+    .contact_info {
+        margin-left: 0;
+
+    }
+    .contact_info p{
+        width: 100%;
+    }
+
+    .portfolio__content, .about-us__content, .contacts__content, .footer__content{
+        margin: 0 30px;
     }
 }
