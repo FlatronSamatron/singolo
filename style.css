@@ -52,6 +52,7 @@ ul{
     margin-right: auto;
     margin-left: 40px;
     letter-spacing: -0.5px;
+    z-index: 1;
 }
 .logo>h1{
     font-size: 25px;
@@ -76,6 +77,7 @@ ul{
     margin-right: 31px;
     position: relative;
 }
+.burger{display: none;}
 .headeer__navigation>li:after{
     content:'';
     display: block;
@@ -734,6 +736,17 @@ footer, .contacts{
     left: 0;
     display: none;
 }
+
+.backNav{
+    height: 1000vh;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 3;
+}
 .popup{
     width: 500px;
     height: 300px;
@@ -773,6 +786,7 @@ footer, .contacts{
     transition: .5s;
     border: #f0d8d9 solid 1px  
 }
+
 
 /* @media screen and (min-width: 768px) and (max-width: 1020px) */
 @media screen and (max-width: 1020px) {
@@ -890,8 +904,21 @@ footer, .contacts{
 }
 
 @media screen and (max-width: 768px) {
+    .burger{display: block;}
+    .burg-menu{
+        display: block;
+        position: absolute;
+        left: 30px;
+        top: 35px;;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    .burg-rotate{
+        transform: rotate(90deg);
+        transition: 0.5s;
+    }
     .wrapper{
-        width: 376px;
+        width: 375px;
         margin: 0 auto;
     }
     nav{
@@ -901,8 +928,43 @@ footer, .contacts{
         margin: 0;
     }
     .slider{
-        height: 218.38px;
+        height: 220px;
         /* display: none; */
+    }
+    .vertical{
+        height: 178px;
+        width: 88px;
+        top: 30px;
+        left: 50px;
+    }
+    .horizontal{
+        width: 178px;
+        height: 88px;
+        top: 70px;
+        right: 45px;
+    }
+    .left{
+        top:100px;
+        left:20px;
+    }
+    .right{
+        top:100px;
+        right: 20px;
+    }
+    .slide2{
+        height: 178px;
+    }
+    .vertical-black {
+        width: 69px;
+        height: 125px;
+        left: 56px;
+        top: 53px;
+    }
+    .horizontal-black {
+        width: 125px;
+        height: 70px;
+        left: 173px;
+        top: 74px;
     }
     .services{
         height: 1025px;
@@ -990,5 +1052,98 @@ footer, .contacts{
 
     .portfolio__content, .about-us__content, .contacts__content, .footer__content{
         margin: 0 30px;
+    }
+
+    .popup{
+        width: 300px;
+    }
+    .burg-menu{
+        z-index: 1;
+    }
+    .burg-nav{
+        width: 300px;
+        height: 1000vh;
+        position: absolute;
+        background: #2D303A;
+        left: -300px;
+        transition: 0.5s;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .burg-nav>nav{
+        display: block;
+        position: absolute;
+    }
+    .burg-nav>nav>.headeer__navigation{
+        flex-direction: column;
+    }
+    .burg-nav>nav>.headeer__navigation>li{
+        margin: 0 0 20px;
+    }
+    .burg-nav>nav>.headeer__navigation>li>a{
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: -0.035em;
+    }
+    .burg-nav>nav>.headeer__navigation>li:after{
+        content: none;
+    }
+    .burg-nav>nav>.headeer__navigation{
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .wrapper{
+        width: 300px;
+    }
+    .portfolio__img{
+        grid-template-columns: 151px;
+        grid-template-rows: 128px 128px 128px 128px;
+        grid-gap:12px;
+        justify-content: center;
+    }
+    .portfolio__img img:nth-child(n + 5){
+        display: none;
+    }
+    .services {
+        height: 1200px;
+    }
+    .info__img {
+        width: 40px;
+        height: 30px;
+    }
+    .info__img img {
+        width: 20px;
+        height: 20px;
+        transform: translate(27%, 25%);
+    }
+    .portfolio__buttons li {
+        font-size: 8px;
+    }
+    .us img {
+        height: 250px;
+        width: 250px;
+    }
+    .about-us__us {
+        grid-template-columns: 250px;
+    }
+    .contacts {
+        height: 1050px;
+    }
+    .horizontal{
+        display: none;
+    }
+    .slide-1 img{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    }
+    .vertical-black {
+        width: 69px;
+        height: 125px;
+        left: 111px;
+        top: 44px;
     }
 }

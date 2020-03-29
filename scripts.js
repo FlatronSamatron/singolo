@@ -34,6 +34,7 @@ const formSub = document.querySelector('.contacts_info_block form');
 
 const popup = document.querySelector('.popup')
 const back = document.querySelector('.back')
+const backNav = document.querySelector('.backNav')
 const ok = document.querySelector('.ok')
 const name = document.querySelector('input[name=input-name]')
 const mail = document.querySelector('input[name=email-adress]')
@@ -42,10 +43,16 @@ const comment = document.querySelector('textarea[name=comment]')
 const firstP = document.querySelector('.first-p')
 const secondP = document.querySelector('.second-p')
 
+const burgMenu = document.querySelector('.burg-menu')
+const burgNav = document.querySelector('.burg-nav');
+
 if(document.body.clientWidth<1020){slides[0].style.height=447+'px'}
 
 slides[0].style.display = 'block';
+let h = window.getComputedStyle(slider,null).getPropertyValue("height");
+slides.forEach(el=>el.style.height = h)
 let slideCount = 0
+let countBurg = 0
 
 navLi.forEach(el=>el.addEventListener("click", addActive));
 
@@ -71,7 +78,7 @@ window.addEventListener(`resize`, event => {
     console.log('res')
   }, false);
 
-
+burgMenu.addEventListener('click', burger)
 function displayBlackLeft(){
     window.getComputedStyle(verticalBlack,null).getPropertyValue("display") === 'none' ? verticalBlack.style.display = 'block' : verticalBlack.style.display = 'none'
 }
@@ -89,7 +96,7 @@ function moveSlide(){
 }
 function leftSlide(){
     slides.forEach(el=>el.style.animationName = 'left')
-    console.log(window.getComputedStyle(slides[0],null).getPropertyValue("height"))
+    // console.log(window.getComputedStyle(slides[0],null).getPropertyValue("height"))
 }
 function rightSlide(){
     slides.forEach(el=>el.style.animationName = 'right')
@@ -100,9 +107,11 @@ window.addEventListener('scroll', function() {
     if(top == 0){
         header.style.height = 89.5+'px'
         headWrap.style.alignItems = 'baseline'
+        burgMenu.style.top = 35+'px'
     }else{
         header.style.height = 40+'px';
         headWrap.style.alignItems = 'center'
+        burgMenu.style.top = 10+'px'
     }
     
     
@@ -134,6 +143,11 @@ function addActive(e){
         behavior: 'smooth',
         block: 'start'
     })
+    burgMenu.classList.toggle("burg-rotate");
+        burgNav.style.left = -300+'px';
+        backNav.style.display = 'none';
+        countBurg = 0;
+        console.log(countBurg)
 }  
 
 
@@ -174,4 +188,22 @@ function hideEl(){
     comment.value = ''
     name.value = ''
     mail.value = ''
+}
+
+
+function burger(e){
+    backNav.onclick = function(){
+        burgMenu.classList.toggle("burg-rotate");
+        burgNav.style.left = -300+'px';
+        backNav.style.display = 'none';
+        countBurg = 0;
+        console.log(countBurg)
+    }
+    // countBurg = e.target.parentNode.getAttribute('class').split(' ')
+    // console.log(e.target.parentNode.getAttribute('class').split(' '))
+    countBurg == 0 ? countBurg = 1 : countBurg = 0
+    burgMenu.classList.toggle("burg-rotate");
+    countBurg == 1 ? burgNav.style.left = 0 : burgNav.style.left = -300+'px';
+    countBurg == 1 ? backNav.style.display = 'block' : backNav.style.display = 'none';
+    
 }
