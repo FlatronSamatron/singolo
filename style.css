@@ -1091,6 +1091,12 @@ footer, .contacts{
     .burg-nav>nav>.headeer__navigation{
         margin-top: 100px;
     }
+    .footer__content p {
+        display: none;
+    }
+    .footer__content{
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 375px) {
