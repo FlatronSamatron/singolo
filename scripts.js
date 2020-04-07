@@ -1,4 +1,5 @@
-const navLi = document.querySelectorAll('.headeer__navigation>li>a');
+const navLi = document.querySelectorAll('.wrapper>nav>.headeer__navigation>li>a');
+const navLiBurg = document.querySelectorAll('.burg-nav>nav>.headeer__navigation>li>a');
 const header = document.querySelector('header');
 const headWrap = document.querySelector('.header>.wrapper');
 
@@ -55,6 +56,7 @@ let slideCount = 0
 let countBurg = 0
 
 navLi.forEach(el=>el.addEventListener("click", addActive));
+navLiBurg.forEach(el=>el.addEventListener("click", addActive));
 
 [left,right].forEach(el => el.addEventListener("click",moveSlide))
 left.addEventListener("click",leftSlide)
@@ -117,7 +119,7 @@ window.addEventListener('scroll', function() {
     
     if(top <= 600){
         navLi.forEach(el=>el.className='')
-        navLi[0].classList.add('active')
+        navLi[0].classList.add('active');
     } else if(top <= 1100){
         navLi.forEach(el=>el.className='')
         navLi[1].classList.add('active')
@@ -130,6 +132,23 @@ window.addEventListener('scroll', function() {
     } else {
         navLi.forEach(el=>el.className='')
         navLi[4].classList.add('active')
+    }
+
+    if(top <= 600){
+        navLiBurg.forEach(el=>el.className='')
+        navLiBurg[0].classList.add('active');
+    } else if(top <= 1100){
+        navLiBurg.forEach(el=>el.className='')
+        navLiBurg[1].classList.add('active')
+    } else if(top <= 2000){
+        navLiBurg.forEach(el=>el.className='')
+        navLiBurg[2].classList.add('active')
+    } else if(top <= 2600){
+        navLiBurg.forEach(el=>el.className='')
+        navLiBurg[3].classList.add('active')
+    } else {
+        navLiBurg.forEach(el=>el.className='')
+        navLiBurg[4].classList.add('active')
     }
   });
 
